@@ -1,15 +1,16 @@
 {
   "name": "loadtest-wordpress-plugin",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple loadtester for http endpoints",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Omid Hezave <o@js.ax> (http://omid.fi)",
+  "author": "Omid H.",
   "license": "MIT",
   "dependencies": {
     "loadtest": "2.3.0",
     "ora": "2.0.0"
-  }
+  },
+  "private": true
 }
