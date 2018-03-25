@@ -9,6 +9,7 @@
   "author": "Omid Hezave <o@js.ax> (http://omid.fi)",
   "license": "MIT",
   "dependencies": {
-    "loadtest": "2.3.0"
+    "loadtest": "2.3.0",
+    "ora": "2.0.0"
   }
 }
