@@ -9,6 +9,11 @@ let pluginPageUrl = 'http://vagrant.local/?p=13&draftsforfriends=key_UnOHTTAm';
 // start the spinner right away
 const spinner = ora('Load testing').start();
 
+// reports back on each request during load testing
+const statusCallback = (error, result, latency) => {
+  spinner.text = getReportText(latency, options, error);
+};
+
 // load testing options, see loadtest package on npm to make sense of them
 const options = {
   url: pluginPageUrl,
@@ -46,10 +51,6 @@ const getReportText = (latency, options, error) => {
 `;
 };
 
-// reports back on each request during load testing
-const statusCallback = (error, result, latency) => {
-  spinner.text = getReportText(latency, options, error);
-};
 
 //
 loadtest.loadTest(options, function(error, result) {
