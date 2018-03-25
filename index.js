@@ -17,10 +17,10 @@ const statusCallback = (error, result, latency) => {
 // load testing options, see loadtest package on npm to make sense of them
 const options = {
   url: pluginPageUrl,
-  maxRequests: 200,
-  concurrency: 10,
-  timelimit: 10,
-  requestsPerSecond: 50,
+  maxRequests: 1000,
+  concurrency: 20,
+  timelimit: 20,
+  requestsPerSecond: 30,
   agentKeepAlive: true,
   statusCallback,
 };
@@ -41,7 +41,7 @@ const getReportText = (latency, options, error) => {
   return `load testing
       URL: ${options.url}...
       Total Requests: ${totalRequests}
-      Total Errors: ${totalErrors} times, ${totalErrors / totalRequests}%
+      Total Errors: ${totalErrors} times, ${Math.floor((totalErrors / totalRequests) * 100)}%
       Mean Latency (ms): ${parseInt(meanLatencyMs, 10)}
       Maximum Latency: ${parseInt(maxLatencyMs, 10)}
       Min Latency: ${parseInt(minLatencyMs, 10)}
