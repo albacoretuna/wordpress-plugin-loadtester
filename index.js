@@ -1,7 +1,7 @@
-var loadtest = require('loadtest');
+const loadtest = require('loadtest');
 let noramlPageUrl = 'http://vagrant.local/?p=25';
 let pluginPageUrl = 'http://vagrant.local/?p=13&draftsforfriends=key_UnOHTTAm';
-var options = {
+const options = {
     url: noramlPageUrl,
     maxRequests: 1000,
     concurrency: 10,
